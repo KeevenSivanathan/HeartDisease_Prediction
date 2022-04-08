@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Heart Disease Predictors</h2>
+
+            <h3>Male or Female?</h3><br><select name="Gender" id="gender" required="required">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <h3>Race?</h3><br><select name="Race" id="race_type" required="required">
+                <option value="Asian">Asian</option>
+                <option value="Black">Black</option>
+                <option value="Hispanic">Hispanic</option>
+                <option value="Native American">Native American</option>
+                <option value="White">White</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <h3>Age</h3><br><select name="Age" id="age_category" required="required">
+                <option value="18 - 24">18 - 24</option>
+                <option value="25 - 29">25 - 29</option>
+                <option value="30 - 34">30 - 34</option>
+                <option value="35 - 39">35 - 39</option>
+                <option value="40 - 44">40 - 44</option>
+                <option value="45 - 49">45 - 49</option>
+                <option value="50 - 54">50 - 54</option>
+                <option value="55 - 59">55 - 59</option>
+                <option value="60 - 64">60 - 64</option>
+                <option value="65 - 69">65 - 69</option>
+                <option value="70 - 74">70 - 74</option>
+                <option value="75 - 79">75 - 79</option>
+                <option value="80 or older">80 or older</option>
+            </select>
+
+            <h3>BMI?</h3><br><select name="BMI" id="BMI_encoded" required="required">
+                <option value="Underweight"> Underweight (BMI less than 18.5) </option>
+                <option value="Normal">Normal (BMI : 18.5 - 24.9) </option>
+                <option value="Overweight">Overweight (BMI : 25 - 29.9)</option>
+                <option value="Obese">Obese (BMI more than 30)</option>
+            </select>
+
+            <h3>General Health?</h3><br><select name="GenHealth" id="GenHealth_encoded" required="required">
+                <option value="Excellent">Excellent</option>
+                <option value="Very Good">Very Good</option>
+                <option value="Good">Good</option>
+                <option value="Fair">Fair</option>
+                <option value="Poor">Poor</option>
+            </select>
+
+            <h3>Have you exercised in the last 30 days?</h3><br><select name="PhysicalActivity" id="phys_act_yes_no" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <h3>In the last 30 days, how many days have you exercised?</h3><input id="first" name="PhysicalHealth" required="required">
+
+            <h3>In the last 30 days, how many days have you experienced bad mental health?</h3><input id="second" name="MentalHealth" required="required">
+
+            <h3>Do you have Asthma?</h3><br><select name="Asthma" id="asthma_yes_no" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <h3>Are you Diabetic?</h3><br><select name="Diabetic" id="diabetic_yes_no" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Borderline Diabetic">Borderline Diabetic</option>
+                <option value="Only during Pregnancy">Only during Pregnancy</option>
+            </select>
+
+            <h3>Have you ever had a stroke?</h3><br><select name="Stroke" id="stroke_yes_no" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <h3>Do you have Kidney Disease?</h3><br><select name="kidneyDisease" id="kidney_yes_no" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <h3>Do you have Skin Cancer?</h3><br><select name="skinCancer" id="cancer_yes_no" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <h3>Do you have difficulty walking?</h3><br><select name="DiffWalking" id="diffWalking_yes_no" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <h3>Have you been drinking heavily? (Male > 14 drinks, Female > 7 drinks)</h3><br><select name="AlcoholDrinking" id="drinking_yes_no" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <h3>Have you smoked more than 100 cigarettes in your lifetime?</h3><br><select name="Smoking" id="smoking_yes_no" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <h3>How many hours have you slept in the past 24 hours?</h3><input id="third" name="SleepTime" required="required">
+
+            <br><br><button id="sub" type="submit ">Predict Results!</button>
+            <br>
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+
+        #fuel:hover {
+            background-color: coral;
+        }
+
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #research:hover {
+            background-color: coral;
+        }
+
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #resea:hover {
+            background-color: coral;
+        }
+
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #sub:hover {
+            background-color: darkcyan;
+        }
+
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fifth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
