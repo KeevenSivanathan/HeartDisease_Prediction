@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <title>HTML FlexBox Template - 2 columns liquid, fixed side and 1large, left content</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+    <meta name="description" content="Use this HTML basic website two columns liquid, fixed side and one large  layout template where the extra stuff is large, and the navigation menu is narrow on the right side and the main content is wide on the left side.">
+    <meta name="generator" content="HAPedit 3.1">
+    <link rel="canonical" href="https://www.w3docs.com/snippets/html/layout_templates/32.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HTML FlexBox Template - Two columns liquid, fixed side and one large , left content" />
+    <meta property="og:description" content="Use this HTML basic website two columns liquid, fixed side and one large  layout template where the extra stuff is large, and the navigation menu is narrow on the right side and the main content is wide on the left side." />
+    <meta property="og:image" content="https://www.w3docs.com/build/images/logo-amp.png" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="192" />
+    <meta property="og:image:height" content="192" />
+    <meta property="og:image:alt" content="W3dcos" />
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <style type="text/css">
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: #292929;
+            font: 90% Roboto, Arial, sans-serif;
+            font-weight: 300;
+        }
+
+        p {
+            padding: 0 10px;
+            line-height: 1.8;
+        }
+
+        ul li {
+            padding-right: 10px;
+            line-height: 1.6;
+        }
+
+        h3 {
+            padding: 5px 20px;
+            margin: 0;
+        }
+
+        div#header {
+            position: relative;
+        }
+
+        div#header h1 {
+            height: 80px;
+            line-height: 80px;
+            margin: 0;
+            padding-left: 10px;
+            background: #e0e0e0;
+            color: #292929;
+        }
+
+        div#header a {
+            position: absolute;
+            right: 0;
+            top: 23px;
+            padding: 10px;
+            color: #006;
+        }
+
+        div#navigation {
+            background: #7cb71c;
+        }
+
+        div#navigation li {
+            list-style: none;
+        }
+
+        div#extra {
+            background: #147FA9;
+        }
+
+        div#footer {
+            background: #42444e;
+            color: #fff;
+        }
+
+        div#footer p {
+            padding: 20px 10px;
+        }
+
+        div#wrapper {
+            float: left;
+            width: 100%;
+        }
+
+        div#content {
+            margin-right: 200px;
+
+        }
+
+
+        div#extra {
+            clear: left;
+            width: 100%;
+        }
+
+        .testbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+        padding: 3px;
+        }
+        form {
+        width: 100%;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 2px 5px #ccc;
+        }
+        input {
+        width: calc(100% - 10px);
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        vertical-align: middle;
+        }
+        input:hover, textarea:hover {
+        outline: none;
+        border: 1px solid #095484;
+        }
+        th, td {
+        width: 28%;
+        padding: 15px 0;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+        vertical-align: unset;
+        line-height: 18px;
+        font-weight: 400;
+        word-break: break-all;
+        }
+        .first-col {
+        width: 16%;
+        text-align: left;
+        }
+        textarea:hover {
+        outline: none;
+        border: 1px solid #1c87c9;
+        }
+        table {
+        width: 100%;
+        }
+        textarea {
+        width: 100px;
+        }
+        .question {
+        padding: 15px 0 5px;
+        color: #095484;
+        }
+        .question-answer label {
+        display: block;
+        padding: 0 20px 10px 0;
+        }
+        .question-answer input {
+        width: auto;
+        }
+        .btn-block {
+        margin-top: 20px;
+        text-align: center;
+        }
+        button {
+        width: 150px;
+        padding: 10px;
+        border: none;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        background-color: #095484;
+        font-size: 16px;
+        color: #fff;
+        cursor: pointer;
+        }
+        button:hover {
+        background-color: #0666a3;
+        }
+        @media (min-width: 568px) {
+        th, td {
+        word-break: keep-all;
+        }
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>Heart Disease Prediction</h1>
+
+    </div>
+    <div id="wrapper">
+        <div id="content">
+            <p><strong>Fill out form in order to predict whether or not you have a Heart disease.</strong></p>
+            <div class="testbox">
+            <form action="/">
+              <p class="question">Gender:</p>
+              <div class="question-answer">
+                <label><input type="radio" value="Male" name="Gender"/> Male</label>
+                <label><input type="radio" value="Female" name="Gender"/> Female</label>
+              </div>
+
+              <p class="question">Race:</p>
+              <div class="question-answer">
+                <label><input type="radio" value="Asian" name="Race" /> Asian</label>
+                <label><input type="radio" value="Black" name="Race" /> Black</label>
+                <label><input type="radio" value="Hispanic" name="Race" /> Hispanic</label>
+                <label><input type="radio" value="Native American" name="Race" /> Native American</label>
+                <label><input type="radio" value="White" name="Race" /> White</label>
+                <label><input type="radio" value="Other" name="Race" /> Other</label>
+              </div>
+
+              <p class="question">Age Group:</p>
+              <div class="question-answer">
+                <label><input type="radio" value="18 - 24" name="Age" /> 18 - 24</label>
+                <label><input type="radio" value="25 - 29" name="Age" /> 25 - 29</label>
+                <label><input type="radio" value="30 - 34" name="Age" /> 30 - 34</label>
+                <label><input type="radio" value="35 - 39" name="Age" /> 35 - 39</label>
+                <label><input type="radio" value="40 - 44" name="Age" /> 40 - 44</label>
+                <label><input type="radio" value="45 - 49" name="Age" /> 45 - 49</label>
+                <label><input type="radio" value="50 - 54" name="Age" /> 50 - 54</label>
+                <label><input type="radio" value="55 - 59" name="Age" /> 55 - 59</label>
+                <label><input type="radio" value="60 - 64" name="Age" /> 60 - 64</label>
+                <label><input type="radio" value="65 - 69" name="Age" /> 65 - 69</label>
+                <label><input type="radio" value="70 - 74" name="Age" /> 70 - 74</label>
+                <label><input type="radio" value="75 - 79" name="Age" /> 75 - 79</label>
+                <label><input type="radio" value="80 or older" name="Age" /> 80 or older</label>
+              </div>
+
+              <p class="question">BMI: </p>
+              <div class="question-answer">
+                <label><input type="radio" value="Underweight" name="BMI" /> Underweight (BMI less than 18.5)</label>
+                <label><input type="radio" value="Normal" name="BMI" /> Normal (BMI : 18.5 - 24.9)</label>
+                <label><input type="radio" value="Overweight" name="BMI" /> Overweight (BMI : 25 - 29.9)</label>
+                <label><input type="radio" value="Obese" name="BMI" /> Obese (BMI more than 30)</label>
+              </div>
+
+
+              <p class="question">General Health:</p>
+              <div class="question-answer">
+                <label><input type="radio" value="Excellent" name="GenHealth" /> Excellent</label>
+                <label><input type="radio" value="Very Good" name="GenHealth" /> Very Good</label>
+                <label><input type="radio" value="Good" name="GenHealth" /> Good</label>
+                <label><input type="radio" value="Fair" name="GenHealth" /> Fair</label>
+                <label><input type="radio" value="Poor" name="GenHealth" /> Poor</label>
+              </div>
+
+              <p class="question">Have you exercised in the last 30 days?</p>
+              <div class="question-answer">
+                <label><input type="radio" value="Yes" name="PhysicalActivity" /> Yes</label>
+                <label><input type="radio" value="No" name="PhysicalActivity" /> No</label>
+              </div>
+
+
+              <p class="question">In the last 30 days, how many days have you exercised?</p>
+              <textarea rows="2" name="PhysicalHealth"></textarea>
+
+              <p class="question">In the last 30 days, how many days have you experienced bad mental health?</p>
+              <textarea rows="2" name="MentalHealth"></textarea>
+
+              <p class="question">Asthma: </p>
+              <div class="question-answer">
+                <label><input type="radio" value="Yes" name="Asthma" /> Yes</label>
+                <label><input type="radio" value="No" name="Asthma" /> No</label>
+              </div>
+
+              <p class="question">Stroke: </p>
+              <div class="question-answer">
+                <label><input type="radio" value="Yes" name="Stroke" /> Yes</label>
+                <label><input type="radio" value="No" name="Stroke" /> No</label>
+              </div>
+
+              <p class="question">Kidney Disease: </p>
+              <div class="question-answer">
+                <label><input type="radio" value="Yes" name="kidneyDisease" /> Yes</label>
+                <label><input type="radio" value="No" name="kidneyDisease" /> No</label>
+              </div>
+
+              <p class="question">Skin Cancer: </p>
+              <div class="question-answer">
+                <label><input type="radio" value="Yes" name="skinCancer" /> Yes</label>
+                <label><input type="radio" value="No" name="skinCancer" /> No</label>
+              </div>
+
+              <p class="question">Do you have difficulty walking? </p>
+              <div class="question-answer">
+                <label><input type="radio" value="Yes" name="DiffWalking" /> Yes</label>
+                <label><input type="radio" value="No" name="DiffWalking" /> No</label>
+              </div>
+
+              <p class="question">Have you been drinking heavily? (Male > 14 drinks, Female > 7 drinks)</p>
+              <div class="question-answer">
+                <label><input type="radio" value="Yes" name="AlcoholDrinking" /> Yes</label>
+                <label><input type="radio" value="No" name="AlcoholDrinking" /> No</label>
+              </div>
+
+              <p class="question">Have you smoked more than 100 cigarettes in your lifetime?</p>
+              <div class="question-answer">
+                <label><input type="radio" value="Yes" name="Smoking" /> Yes</label>
+                <label><input type="radio" value="No" name="Smoking" /> No</label>
+              </div>
+
+              <p class="question">Are you Diabetic? </p>
+              <div class="question-answer">
+                <label><input type="radio" value="Yes" name="Diabetic" /> Yes</label>
+                <label><input type="radio" value="No" name="Diabetic" /> No</label>
+                <label><input type="radio" value="Borderline Diabetic" name="Diabetic" /> Borderline Diabetic</label>
+                <label><input type="radio" value="Only during Pregnancy" name="Diabetic" /> Only during Pregnancy</label>
+              </div>
+
+              <p class="question">How many hours have you slept in the past 24 hours?</p>
+              <textarea rows="2" name="SleepTime"></textarea>
+
+              <div class="btn-block">
+                <button type="submit" href="/">PREDICT</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <div id="extra">
+        <p><strong></strong></p>
+    </div>
+
+    <div id="footer">
+      <a href="mailto:keeveneven@gmail.com" class="fa-thin fa-envelope">Email</a>
+      <a href="https://github.com/KeevenSivanathan">GitHub</a>
+      <a href="https://keevensivanathan.webflow.io/">Website</a>
+    </div>
+</div>
+<script type="text/javascript">AddFillerLink("content", "navigation", "extra")</script>
+</body>
+</html>
